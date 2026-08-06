@@ -1,71 +1,36 @@
-const formulario = document.getElementById("clienteForm");
-const tablaClientes = document.getElementById("tablaClientes");
+// Crear usuario por primera vez
 
-let clientes = [];
-let editando = null;
+if (!localStorage.getItem("usuario")) {
 
-formulario.addEventListener("submit", function (e) {
-  e.preventDefault();
+    localStorage.setItem("usuario", "admin");
+    localStorage.setItem("password", "12345");
 
-  const cliente = {
-    nombre: document.getElementById("nombre").value,
-    correo: document.getElementById("correo").value,
-    telefono: document.getElementById("telefono").value,
-    direccion: document.getElementById("direccion").value,
-  };
+}
 
-  if (editando !== null) {
-    clientes[editando] = cliente;
-    editando = null;
-  } else {
-    clientes.push(cliente);
-  }
+const formulario = document.getElementById("loginForm");
 
-  formulario.reset();
-  mostrarClientes();
+formulario.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const usuario = document.getElementById("usuario").value;
+    const password = document.getElementById("password").value;
+
+    const usuarioGuardado = localStorage.getItem("usuario");
+    const passwordGuardada = localStorage.getItem("password");
+
+    const mensaje = document.getElementById("mensaje");
+
+    if(usuario === usuarioGuardado && password === passwordGuardada){
+
+        localStorage.setItem("logueado", "true");
+
+        window.location.href = "dashboard.html";
+
+    }else{
+
+        mensaje.textContent = "Usuario o contraseña incorrectos";
+
+    }
+
 });
-
-function mostrarClientes() {
-  tablaClientes.innerHTML = "";
-
-  clientes.forEach((cliente, index) => {
-    const fila = document.createElement("tr");
-
-    fila.innerHTML = `
-            <td>${cliente.nombre}</td>
-            <td>${cliente.correo}</td>
-            <td>${cliente.telefono}</td>
-            <td>${cliente.direccion}</td>
-            <td>
-                <button class="btn-editar" onclick="editarCliente(${index})">
-                    Editar
-                </button>
-
-                <button class="btn-eliminar" onclick="eliminarCliente(${index})">
-                    Eliminar
-                </button>
-            </td>
-        `;
-
-    tablaClientes.appendChild(fila);
-  });
-}
-
-function editarCliente(index) {
-  document.getElementById("nombre").value = clientes[index].nombre;
-
-  document.getElementById("correo").value = clientes[index].correo;
-
-  document.getElementById("telefono").value = clientes[index].telefono;
-
-  document.getElementById("direccion").value = clientes[index].direccion;
-
-  editando = index;
-}
-
-function eliminarCliente(index) {
-  if (confirm("¿Desea eliminar este cliente?")) {
-    clientes.splice(index, 1);
-    mostrarClientes();
-  }
-}

@@ -1,49 +1,45 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Administración de Clientes</title>
-    <link rel="stylesheet" href="/mini-proyecto/src/style/style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Administración de Clientes</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/mini-proyecto/src/style/style.css">
+</head>
+<body>
 
-      <form id="clienteForm">
-        <input type="hidden" id="clienteId" />
+<div class="login-container">
 
-        <input type="text" id="nombre" placeholder="Nombre Completo" required />
+    <h1>Bienvenido</h1>
+    <p>Inicia sesión para continuar</p>
+
+    <form id="loginForm">
 
         <input
-          type="email"
-          id="correo"
-          placeholder="Correo Electrónico"
-          required
-        />
+            type="text"
+            id="usuario"
+            placeholder="Usuario"
+            required
+        >
 
-        <input type="tel" id="telefono" placeholder="Teléfono" required />
+        <input
+            type="password"
+            id="password"
+            placeholder="Contraseña"
+            required
+        >
 
-        <input type="text" id="direccion" placeholder="Dirección" required />
+        <button type="submit">
+            Ingresar
+        </button>
 
-        <button type="submit">Guardar Cliente</button>
-      </form>
+        <p id="mensaje"></p>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Dirección</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
+    </form>
 
-        <tbody id="tablaClientes"></tbody>
-      </table>
-    </div>
+</div>
 
-    <script src="/mini-proyecto/src/js/index.js"></script>
-  </body>
+<script src="js/login.js"></script>
+
+</body>
 </html>
