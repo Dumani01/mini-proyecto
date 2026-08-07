@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administración de Clientes</title>
+    <link rel="stylesheet" href="/mini-proyecto/src/style/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Administración de Clientes</h1>
+
+      <form id="clienteForm">
+        <input type="hidden" id="clienteId" />
+
+        <input type="text" id="nombre" placeholder="Nombre Completo" required />
+
+        <input
+          type="email"
+          id="correo"
+          placeholder="Correo Electrónico"
+          required
+        />
+
+        <input type="tel" id="telefono" placeholder="Teléfono" required />
+
+        <input type="text" id="direccion" placeholder="Dirección" required />
+
+        <button type="submit">Guardar Cliente</button>
+      </form>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+
+        <tbody id="tablaClientes"></tbody>
+      </table>
+    </div>
+
+    <script src="/mini-proyecto/src/js/index.js"></script>
+  </body>
+</html>
