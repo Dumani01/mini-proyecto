@@ -1,0 +1,140 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial;
+}
+
+body{
+
+    background:#f4f4f4;
+
+}
+
+header{
+
+    background:#222;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.contenedor{
+
+    width:90%;
+
+    max-width:900px;
+
+    margin:30px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+
+}
+
+form{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+
+    gap:15px;
+
+}
+
+input{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:5px;
+
+}
+
+button{
+
+    background:#27ae60;
+
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+}
+
+button:hover{
+
+    background:#1f8a4c;
+
+}
+
+table{
+
+    width:100%;
+
+    margin-top:20px;
+
+    border-collapse:collapse;
+
+}
+
+th{
+
+    background:#222;
+
+    color:white;
+
+    padding:12px;
+
+}
+
+td{
+
+    text-align:center;
+
+    padding:12px;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.editar{
+
+    background:#f39c12;
+
+    margin-right:5px;
+
+}
+
+.eliminar{
+
+    background:#c0392b;
+
+}
+
+.editar:hover{
+
+    background:#d68910;
+
+}
+
+.eliminar:hover{
+
+    background:#922b21;
+
+}
