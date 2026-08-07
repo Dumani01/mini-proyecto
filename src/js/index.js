@@ -25,7 +25,7 @@ formulario.addEventListener("submit", function(e){
 
         localStorage.setItem("logueado", "true");
 
-        window.location.href = "dashboard.html";
+        window.location.href = "Dashboard.html";
 
     }else{
 
